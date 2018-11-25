@@ -1,0 +1,21 @@
+{
+    "name": "node-snippets",
+    "displayName": "node-snippets",
+    "description": "snippets for node + libraries",
+    "version": "0.0.1",
+    "publisher": "chris-noring",
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
