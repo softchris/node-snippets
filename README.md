@@ -23,6 +23,9 @@ The following commands are available:
 ## Release Notes
 This is the release notes.
 
+### 0.0.2
+added repo and icon
+
 ### 0.0.1
 some initial commands for express library but also things like `http`, file access and using `event-emitter`
 
