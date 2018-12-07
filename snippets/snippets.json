@@ -132,5 +132,65 @@
       "});"
     ],
     "description": "Event emitter, shows emitting event and subscribing to it"
+  },
+  "Promise creation": {
+    "prefix": "node-promise-create",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "  let condition = false;",
+      "  if(condition) {",
+      "    resolve('data')",
+      "  } else {",
+      "    reject('error')",
+      "}",
+      "})"
+    ],
+    "description": "creates a Promise by instantiating it"
+  },
+  "Promise shorthand": {
+    "prefix": "node-promise-shorthand",
+    "body": [
+      "const promiseThatWillResolve = Promise.resolve('data');",
+      "const promiseThatWillReject = Promise.reject('error');"
+    ],
+    "description": "uses the static resolve/reject, good for unit tests"
+  },
+  "Promise all": {
+    "prefix": "node-promise-all",
+    "body": [
+      "const getData = () => Promise.resolve('data');",
+      "const getMoreData = () => Promise.resolve('more data');",
+      "",
+      "Promise.all(",
+      "  getData(),",
+      "  getMoreData()",
+      ").then(result => {",
+      "  const [data, moreData] = result;",
+      "})"
+    ],
+    "description": "uses the static all(), allows us to have a list of Promises finish at the same time"
+  },
+  "Async/await": {
+    "prefix": "node-async-await",
+    "body": [
+      "async function getData() {",
+      "  return Promise.resolve('data');",
+      "}",
+      "",
+      "async function getMoreData(data) {",
+      "  return Promise.resolve(data + 'more data');",
+      "}",
+      "",
+      "function getAll() {",
+      "  const data = await getData();",
+      "  const moreData = await getMoreData(data);",
+      "  return `All the data: ${data}, ${moreData}`;",
+      "}",
+      "",
+      "getAll().then((all) => {",
+      "  console.log('all the data')",
+      "})"
+    ],
+    "description": "demonstrates async/await"
   }
 }

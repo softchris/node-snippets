@@ -3,6 +3,7 @@
 This is an extension meant to give you some awesome NodeJS snippets
 
 ## Features
+
 A collection of NodeJS snippets
 
 The following commands are available:
@@ -19,16 +20,28 @@ The following commands are available:
 - `node-file-read-sync`, reads a file synchronously
 - `node-file-read-async`, reads a file asynchronously, with a callback
 - `node-event-emitter`, creates an event emitter, emit events and shows to subscribe to said event
+- `node-promise-create`, creates a Promise
+- `node-promise-shorthand`, creates a Promises using the static methods `resolve()` and `reject()`
+- `node-promise-all`, resolves a list of Promises using the `Promise.all([])` method
+- `node-async-await`, using async/await
 
 ## Release Notes
+
 This is the release notes.
 
+### 0.0.3
+
+added promises and async
+
 ### 0.0.2
+
 added repo and icon
 
 ### 0.0.1
+
 some initial commands for express library but also things like `http`, file access and using `event-emitter`
 
 ## Publisher
+
 Chris Noring
 @chris_noring
