@@ -192,5 +192,33 @@
       "})"
     ],
     "description": "demonstrates async/await"
+  },
+  "Joi schema validation": {
+    "prefix": "node-express-schema-validation",
+    "body": [
+      "const Joi = require('joi');",
+      "const loginSchema = Joi.object().keys({",
+      "  username: Joi.string()",
+      "    .min(3),",
+      "    .max(10),",
+      "    .required(),",
+      "  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/)",
+      "});",
+      "",
+      "app.post('/login', function(req, res) {",
+      "  const valid = Joi.validate(req.body, loginSchema).error === null;",
+      "  if (!valid) {",
+      "    res.status(422).json({",
+      "      status: 'error'",
+      "      message: 'Invalid request data'",
+      "      data: req.body",
+      "    });",
+      "  } else {",
+      "    // happy days - login user",
+      "    res.send(`ok`);",
+      "  }",
+      "});"
+    ],
+    "description": "showcases the lib Joi and how you can use it to validate incoming requests"
   }
 }

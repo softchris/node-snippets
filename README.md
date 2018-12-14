@@ -1,6 +1,7 @@
 # node-snippets
 
 This is an extension meant to give you some awesome NodeJS snippets
+![alt text](images/node-snippets.gif "Using the snippet")
 
 ## Features
 
@@ -24,10 +25,23 @@ The following commands are available:
 - `node-promise-shorthand`, creates a Promises using the static methods `resolve()` and `reject()`
 - `node-promise-all`, resolves a list of Promises using the `Promise.all([])` method
 - `node-async-await`, using async/await
+- `node-express-schema-validation`, adding schema validation for express, read more about the usage of schema validation with `Joi` at https://github.com/hapijs/joi
 
 ## Release Notes
 
 This is the release notes.
+
+### 0.0.6
+
+Adding preview image
+
+### 0.0.5
+
+correcting the docs
+
+### 0.0.4
+
+adding schema validation with the lib `Joi`
 
 ### 0.0.3
 
