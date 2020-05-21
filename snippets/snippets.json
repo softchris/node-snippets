@@ -1,4 +1,32 @@
 {
+  "regex-test-digits": {
+    "prefix": "node-regex-test-digits",
+    "body": [
+      "const isMatch = /\\d+/.test('abc123')"
+    ],
+    "description" : "test if string contains digits, returns true/false"
+  },
+  "regex-test-word": {
+    "prefix": "node-regex-test-word",
+    "body": [
+      "const isMatch = /\\w+/.test('abc123')"
+    ],
+    "description": "test if string contains a word boundary, returns true/false"
+  },
+  "regex-test-match": {
+    "prefix": "node-regex-match",
+    "body": [
+      "const [, extension] = 'file.txt'.match(/\\.(\\w+)/)"
+    ],
+    "description": "matches a file extension"
+  },
+  "regex-test-match-named-group": {
+    "prefix": "node-regex-match-named-group",
+    "body": [
+      "const { groups: { extension } } = 'file.txt'.match(/\\.(?<extension>\\w+)/)"
+    ],
+    "description": "matches a file extension, "
+  },
   "express server": {
     "prefix": "node-express",
     "body": [
@@ -42,11 +70,52 @@
     "prefix": "node-express-post-params",
     "body": [
       "var bodyParser = require('body-parser');",
-      "app.use(bodyParser.urlencoded({ extended: false }));",
+      "app.use(bodyParser.json());",
       "",
       "app.post('/update', function(req, res) {",
       "  const { name, description } = req.body;",
       "  res.send(`Name ${name}, desc ${description}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "express PUT params": {
+    "prefix": "node-express-put-params",
+    "body": [
+      "var bodyParser = require('body-parser');",
+      "app.use(bodyParser.json());",
+      "",
+      "app.put('/products', function(req, res) {",
+      "  const { id, name, description } = req.body;",
+      "  res.send(`Name ${id} ${name}, desc ${description}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "express DELETE params": {
+    "prefix": "node-express-delete-params",
+    "body": [
+      "var bodyParser = require('body-parser');",
+      "app.use(bodyParser.json());",
+      "",
+      "app.delete('/products/:id', function(req, res) {",
+      "  const { id } = req.params;",
+      "  res.send(`Delete record with id ${id}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "express QUERY params": {
+    "prefix": "node-express-query-params",
+    "body": [
+      "var bodyParser = require('body-parser');",
+      "app.use(bodyParser.json());",
+      "",
+      "// for routes looking like this `/products?page=1&pageSize=50`",
+      "app.get('/products', function(req, res) {",
+      "  const page = req.query.page;",
+      "  const pageSize = req.query.pageSize;",
+      "  res.send(`Filter with parameters ${page} and ${pageSize});`",
       "});"
     ],
     "description": "Creates a POST route that can read from the body"
@@ -128,7 +197,7 @@
       "var eventEmitter = new events.EventEmitter();",
       "eventEmitter.emit('my_event');",
       "eventEmitter.on('my_event', () => {",
-      "  console.log('data received succesfully.');",
+      "  console.log('data received successfully.');",
       "});"
     ],
     "description": "Event emitter, shows emitting event and subscribing to it"

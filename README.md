@@ -15,6 +15,9 @@ The following commands are available:
 - `node-express-post`, creates a POST route
 - `node-express-post-params`, creates a POST route and shows how to access the body
 - `node-express-post-params-alt`, creates a POST route, shows how to access the body, works for express 4.16 and above
+- `node-express-put-params`, creates a PUT route, shows how to access body.
+- `node-express-delete-params`, creates a DELETE route, shows how to access route parameter.
+- `node-express-query-params`, creates a POST route, shows how to access query parameters.
 - `node-express-middleware-logger`, creates an example middleware
 - `node-express-middleware-error`, creates an error handling middleware
 - `node-http-server`, creates a simple HTTP server
@@ -26,6 +29,10 @@ The following commands are available:
 - `node-promise-all`, resolves a list of Promises using the `Promise.all([])` method
 - `node-async-await`, using async/await
 - `node-express-schema-validation`, adding schema validation for express, read more about the usage of schema validation with `Joi` at https://github.com/hapijs/joi
+- `node-regex-test-digits`, invokes the `test()` method that tests whether a string matches a regular expression on digits.
+- `node-regex-test-word`, invokes the `test()` method that tests whether a string matches a regular expression on word boundaries.
+- `node-regex-match`, invokes the method `match()` on a regular expression to find a file extension
+- `node-regex-match-named-group`, invokes the method `match()` on a regular expression and place it in a group called `exteension`. 
 
 ## Release Notes
 
