@@ -1,4 +1,135 @@
 {
+  "http-quark": {
+    "prefix": "node-http-quark",
+    "body": [
+      "const quark = require('quarkhttp');",
+      "const app = quark();",
+      "app.get('/', (req, res) => res.send('hello world'))",
+      "app.listen(3000, () => {",
+      "  console.log('Server running on 3000');",
+      "})"
+    ],
+    "description": "a micro HTTP framework, creates an app with a route"
+  },
+  "http-quark-get": {
+    "prefix": "node-http-quark-get",
+    "body": [
+      "app.get('/products', (req, res) => res.json([{ id: 1, name: 'a product' }]))"
+    ],
+    "description": "a micro HTTP framework, adds a GET route"
+  },
+  "http-quark-post": {
+    "prefix": "node-http-quark-post",
+    "body": [
+      "app.post('/products', (req,res) => {",
+      "  console.info('body', req.body)",
+      "  res.json(req.body);",
+      "})"
+    ],
+    "description": "a micro HTTP framework, adds a POST route"
+  },
+  "http-quark-put": {
+    "prefix": "node-http-quark-put",
+    "body": [
+      "app.put('/products', (req,res) => {",
+      "  console.info('body', req.body)",
+      "  res.json(req.body);",
+      "})"
+    ],
+    "description": "a micro HTTP framework, adds a PUT route"
+  },
+  "http-quark-middleware": {
+    "prefix": "node-http-quark-middleware",
+    "body": [
+      "app.get('/orders', (req, res, next) => {",
+      "  if (req.headers['authorization'] === 'abc123') {",
+      "    next()",
+      "  } else {",
+      "    res.statusCode = 401;",
+      "    res.send('Not allowed')",
+      "  }",
+      "}, (req, res) => {",
+      "  res.send('Protected route');",
+      "})"
+    ],
+    "description": "a micro HTTP framework, adds a middleware"
+  },
+  "jest-suite": {
+    "prefix": "node-jest-suite",
+    "body": [
+      "describe('$1', () => {",
+      "  ",
+      "})"
+    ]
+  },
+  "jest-test": {
+    "prefix": "node-jest-test",
+    "body": [
+      "test('$1', () => {$2})"
+    ]
+  },
+  "jest-test-expect": {
+    "prefix": "node-jest-test-expect",
+    "body": [
+      "test('$2', () => {",
+      "  expect(1).toBe(2)",
+      "})"
+    ]
+  },
+  "jest-expect": {
+    "prefix": "node-jest-expect",
+    "body": [
+      " expect(1).toBe(2)"
+    ]
+  },
+  "jest-expect-to-equal": {
+    "prefix": "node-jest-expect-to-equal",
+    "body": [
+      "let obj = { a: '1' }",
+      "expect(obj).toEqual({ a: '1' })"
+    ]
+  },
+  "jest-test-expect-to-equal": {
+    "prefix": "node-jest-test-expect-to-equal",
+    "body": [
+      "test('$2', () => {",
+      "  let obj = { a: '1' }",
+      "  expect(obj).toEqual({ a: '1' })",
+      "})"
+    ]
+  },
+  "jest-expect-to-throw": {
+    "prefix": "node-jest-expect-to-throw",
+    "body": [
+      "const thisThrows = () => throw new Error('error message')",
+      "expect(thisThrows).toThrow('error message')"
+    ]
+  },
+  "jest-test-expect-to-throw": {
+    "prefix": "node-jest-test-expect-to-throw",
+    "body": [
+      "test('$2', () => {",
+      "  const thisThrows = () => throw new Error('error message')",
+      "  expect(thisThrows).toThrow('error message')",
+      "})"
+    ]
+  },
+  "jest-test-beforeAll": {
+    "prefix": "node-jest-test-beforeAll",
+    "body": [
+      "  beforeAll(() => {",
+      "    ",
+      "  })"
+    ]
+  },
+  "jest-test-afterAll": {
+    "prefix": "node-jest-test-afterAll",
+    "body": [
+      "  afterAll(() => {",
+      "    ",
+      "  })"
+    ]
+  },
   "regex-test-digits": {
     "prefix": "node-regex-test-digits",
     "body": [

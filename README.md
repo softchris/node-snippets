@@ -33,14 +33,29 @@ The following commands are available:
 - `node-regex-test-word`, invokes the `test()` method that tests whether a string matches a regular expression on word boundaries.
 - `node-regex-match`, invokes the method `match()` on a regular expression to find a file extension
 - `node-regex-match-named-group`, invokes the method `match()` on a regular expression and place it in a group called `exteension`. 
+- `node-http-quark`, creates a HTTP app using the framework [quarkhttp](https://www.npmjs.com/package/quarkhttp),
+- `node-http-quark-get`, adds a GET route to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
+- `node-http-quark-post`, adds a POST route to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
+- `node-http-quark-put`, adds a PUT route to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
+- `node-http-quark-middleware`, adds a middleware to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
+- `node-jest-suite`, adds a test suite
+- `node-jest-test`, adds a test
+- `node-jest-test-expect`, adds a test with an expect
+- `node-jest-expect`, adds an expect, using `toBe()`
+- `node-jest-expect-to-equal`, adds expect, using `toEqual()`
+- `node-jest-test-expect-to-equal`, adds a test with an expect, using `toEqual()`
+- `node-jest-expect-to-throw`, adds an expect, using `toThrow()`
+- `node-jest-test-expect-to-throw`, adds a test with an expect, using `toThrow()`,
+- `node-jest-test-beforeAll`, adds a `beforeAll()`, this method runs before all tests
+- `node-jest-test-afterAll`, adds a `afterAll()`, this method runs after all tests
 
 ## Release Notes
 
 This is the release notes.
 
-### 0.0.6
+### 1.1.0
 
-Adding preview image
+Adding Jest snippets and snippets for a micro HTTP framework, quarkhttp (can be installed from NPM)
 
 ### 0.0.5
 
