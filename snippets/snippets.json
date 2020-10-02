@@ -56,38 +56,23 @@
   },
   "jest-suite": {
     "prefix": "node-jest-suite",
-    "body": [
-      "describe('$1', () => {",
-      "  ",
-      "})"
-    ]
+    "body": ["describe('$1', () => {", "  ", "})"]
   },
   "jest-test": {
     "prefix": "node-jest-test",
-    "body": [
-      "test('$1', () => {$2})"
-    ]
+    "body": ["test('$1', () => {$2})"]
   },
   "jest-test-expect": {
     "prefix": "node-jest-test-expect",
-    "body": [
-      "test('$2', () => {",
-      "  expect(1).toBe(2)",
-      "})"
-    ]
+    "body": ["test('$2', () => {", "  expect(1).toBe(2)", "})"]
   },
   "jest-expect": {
     "prefix": "node-jest-expect",
-    "body": [
-      " expect(1).toBe(2)"
-    ]
+    "body": [" expect(1).toBe(2)"]
   },
   "jest-expect-to-equal": {
     "prefix": "node-jest-expect-to-equal",
-    "body": [
-      "let obj = { a: '1' }",
-      "expect(obj).toEqual({ a: '1' })"
-    ]
+    "body": ["let obj = { a: '1' }", "expect(obj).toEqual({ a: '1' })"]
   },
   "jest-test-expect-to-equal": {
     "prefix": "node-jest-test-expect-to-equal",
@@ -116,39 +101,25 @@
   },
   "jest-test-beforeAll": {
     "prefix": "node-jest-test-beforeAll",
-    "body": [
-      "  beforeAll(() => {",
-      "    ",
-      "  })"
-    ]
+    "body": ["  beforeAll(() => {", "    ", "  })"]
   },
   "jest-test-afterAll": {
     "prefix": "node-jest-test-afterAll",
-    "body": [
-      "  afterAll(() => {",
-      "    ",
-      "  })"
-    ]
+    "body": ["  afterAll(() => {", "    ", "  })"]
   },
   "regex-test-digits": {
     "prefix": "node-regex-test-digits",
-    "body": [
-      "const isMatch = /\\d+/.test('abc123')"
-    ],
-    "description" : "test if string contains digits, returns true/false"
+    "body": ["const isMatch = /\\d+/.test('abc123')"],
+    "description": "test if string contains digits, returns true/false"
   },
   "regex-test-word": {
     "prefix": "node-regex-test-word",
-    "body": [
-      "const isMatch = /\\w+/.test('abc123')"
-    ],
+    "body": ["const isMatch = /\\w+/.test('abc123')"],
     "description": "test if string contains a word boundary, returns true/false"
   },
   "regex-test-match": {
     "prefix": "node-regex-match",
-    "body": [
-      "const [, extension] = 'file.txt'.match(/\\.(\\w+)/)"
-    ],
+    "body": ["const [, extension] = 'file.txt'.match(/\\.(\\w+)/)"],
     "description": "matches a file extension"
   },
   "regex-test-match-named-group": {
@@ -420,5 +391,108 @@
       "});"
     ],
     "description": "showcases the lib Joi and how you can use it to validate incoming requests"
+  },
+  "supertest-init": {
+    "prefix": "node-supertest-init",
+    "body": [
+      "const supertest = require('supertest')",
+      "const app = require('../app');",
+      "const server = app.listen(3000, () => {",
+      "  console.log('listening at port 3000')",
+      "})",
+      "let request;"
+    ],
+    "description": "Sets up supertest by importing supertest and the app you mean to test. Additionally starts the app"
+  },
+  "supertest-beforeall": {
+    "prefix": "node-supertest-beforeall",
+    "body": [
+      "beforeAll(() => {",
+      "  request = supertest(app)",
+      "})"
+    ],
+    "description": "Configures supertest to use the app, this is needed"
+  },
+  "supertest-afterall": {
+    "prefix": "node-supertest-aftereall",
+    "body": [
+      "afterAll(await(close) => {",
+      "  server.close(() => {",
+      "    close()",
+      "   console.log('server closed');",
+      "  })",
+      "})"
+    ],
+    "description": "Ensures the web app closes down after the test run, this is needed"
+  },
+  "supertest-testGET": {
+    "prefix": "node-supertest-testget",
+    "body": [
+      "test('testing a GET route', async () => {",
+      "  let products = [",
+      "  {",
+      "    id: 1,",
+      "    name: 'book'",
+      "  },",
+      "  {",
+      "    id: 2,",
+      "    name: 'book2'",
+      "  }",
+      " ];",
+      "",
+      "  const res = await request.get('/products');",
+      "  expect(res.status).toBe(200);",
+      "  expect(res.body).toEqual(products);",
+      "})"
+    ],
+    "description": "An example of supertest testing a GET route"
+  },
+  "supertest-testGETWithParam": {
+    "prefix": "node-supertest-testgetwithparam",
+    "body": [
+      "test('testing a GET route with router param', async () => {",
+      "  let product = {",
+      "    id: 1,",
+      "    name: 'book'",
+      "  };",
+      "  const res = await request.get('/products/1');",
+      "  expect(res.status).toBe(200);",
+      "  expect(res.body).toEqual(product);",
+      "});"
+    ],
+    "description": "An example of supertest testing a GET route with a route parameter"
+  },
+  "supertest-testPOSTWithParam": {
+    "prefix": "node-supertest-testpost",
+    "body": [
+      "test('testing a POST route with a payload', async () => {",
+      "  let product = {",
+      "    name: 'book3'",
+      "  };",
+      "  const res = await request",
+      "  .post('/products')",
+      "  .send(product);",
+      "  expect(res.status).toBe(200);",
+      "  expect(res.body).toEqual({ id: 3, ...product});",
+      "",
+      "  const newRes = await request.get('/products');",
+      "  let products = [",
+      "  {",
+      "    id: 1,",
+      "    name: 'book'",
+      "  },",
+      "  {",
+      "    id: 2,",
+      "    name: 'book2'",
+      "  },",
+      "  {",
+      "    id: 3,",
+      "    name: 'book3',",
+      "  }",
+      " ];",
+     "  expect(newRes.body).toEqual(products);",
+     "});"
+    ],
+    "description": "An example of supertest testing a POST route with a payload"
   }
 }

@@ -1,7 +1,18 @@
+
 # node-snippets
 
 This is an extension meant to give you some awesome NodeJS snippets
 ![alt text](images/node-snippets.gif "Using the snippet")
+
+## Contact
+
+If you find issues please report them on the GitHub repo.
+
+If you have any comments like feature requests or feedback on theses snippets please contact me on Twitter at [chris_noring](https://twitter.com/chris_noring).
+
+Remember these snippets are for all of you, so if you feel that they could be even better, don't hesitate to let me know :)
+
+/Chris
 
 ## Features
 
@@ -32,7 +43,7 @@ The following commands are available:
 - `node-regex-test-digits`, invokes the `test()` method that tests whether a string matches a regular expression on digits.
 - `node-regex-test-word`, invokes the `test()` method that tests whether a string matches a regular expression on word boundaries.
 - `node-regex-match`, invokes the method `match()` on a regular expression to find a file extension
-- `node-regex-match-named-group`, invokes the method `match()` on a regular expression and place it in a group called `exteension`. 
+- `node-regex-match-named-group`, invokes the method `match()` on a regular expression and place it in a group called `exteension`.
 - `node-http-quark`, creates a HTTP app using the framework [quarkhttp](https://www.npmjs.com/package/quarkhttp),
 - `node-http-quark-get`, adds a GET route to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
 - `node-http-quark-post`, adds a POST route to your [quarkhttp](https://www.npmjs.com/package/quarkhttp) app
@@ -48,10 +59,37 @@ The following commands are available:
 - `node-jest-test-expect-to-throw`, adds a test with an expect, using `toThrow()`,
 - `node-jest-test-beforeAll`, adds a `beforeAll()`, this method runs before all tests
 - `node-jest-test-afterAll`, adds a `afterAll()`, this method runs after all tests
+- `node-supertest-init`, adds the initial imports for supertest and the app you are about to test. I assume the app you are about to test looks something like this:
+
+   ```javascript
+   //  app.js
+   const express = require('express')
+   const app = express();
+   // your route definitions
+   module.exports = app;
+   ```
+
+   and that your file structure looks like this:
+
+   ```bash
+   -| app.js    // this is where the web app goes
+   -| __tests__/
+   ---| app.js  // this where the tests goes
+   ```
+
+- `node-supertest-beforeall`, configures supertest to use the app instance, this is a needed step to initialize supertest
+- `node-supertest-aftereall`, ensures the web app closes down after the test run, this is a needed step.
+- `node-supertest-testget`, an example of supertest testing a GET route
+- `node-supertest-testgetwithparam`, an example of supertest testing a GET route with a route parameter
+- `node-supertest-testpost`, an example of supertest testing a POST route with a payload
 
 ## Release Notes
 
 This is the release notes.
+
+### 1.2.1
+
+Adding supertest so you can easily test your API. Assumes using Express as web framework.
 
 ### 1.1.0
 
