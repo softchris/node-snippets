@@ -416,7 +416,7 @@
   "supertest-afterall": {
     "prefix": "node-supertest-aftereall",
     "body": [
-      "afterAll(await(close) => {",
+      "afterAll(async(close) => {",
       "  server.close(() => {",
       "    close()",
       "   console.log('server closed');",
