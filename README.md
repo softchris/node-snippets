@@ -87,6 +87,10 @@ The following commands are available:
 
 This is the release notes.
 
+### 1.3.2
+
+Adding typescript support. Thank you to @DrQubit for the suggestion
+
 ### 1.2.1
 
 Adding supertest so you can easily test your API. Assumes using Express as web framework.
