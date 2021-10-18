@@ -352,7 +352,7 @@
       "  return Promise.resolve(data + 'more data');",
       "}",
       "",
-      "function getAll() {",
+      "async function getAll() {",
       "  const data = await getData();",
       "  const moreData = await getMoreData(data);",
       "  return `All the data: \\${data\\}, \\${moreData\\}`;",
