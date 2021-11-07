@@ -87,6 +87,10 @@ The following commands are available:
 
 This is the release notes.
 
+### 1.3.3
+
+Fix issues with interpolation
+
 ### 1.3.2
 
 Adding typescript support. Thank you to @DrQubit for the suggestion

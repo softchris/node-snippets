@@ -2,7 +2,7 @@
   "name": "node-snippets",
   "displayName": "node-snippets",
   "description": "snippets for node + libraries",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "publisher": "chris-noring",
   "engines": {
     "vscode": "^1.29.0"
