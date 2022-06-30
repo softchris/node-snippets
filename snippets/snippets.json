@@ -369,10 +369,7 @@
     "body": [
       "const Joi = require('joi');",
       "const loginSchema = Joi.object().keys({",
-      "  username: Joi.string()",
-      "    .min(3)",
-      "    .max(10)",
-      "    .required(),",
+      "  username: Joi.string().min(3).max(10).required(),",
       "  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/)",
       "});",
       "",
@@ -490,5 +487,210 @@
       "});"
     ],
     "description": "An example of supertest testing a POST route with a payload"
+  },
+  "ES6": "ES6 MODULES",
+  "es6-http-quark": {
+    "prefix": "njshqk",
+    "body": [
+      "import quark from 'quarkhttp';",
+      "const app = quark();",
+      "app.get('/', (req, res) => res.send('hello world'))",
+      "app.listen(3000, () => {",
+      "  console.log('Server running on 3000');",
+      "})"
+    ],
+    "description": "a micro HTTP framework, creates an app with a route"
+  },
+  "es6-express server": {
+    "prefix": "njsxpress",
+    "body": [
+      "import express from 'express';",
+      "import { request, response } from 'express';",
+      "",
+      "const app = express()",
+      "const port = 3000",
+      "",
+      "app.get('/', (req=request, res=response) => res.send('Hello World!'))",
+      "app.listen(port, () => console.log(`Example app listening on port \\${port\\}!`))"
+    ],
+    "description": "Creates an express server"
+  },
+  "es6-express POST params": {
+    "prefix": "njsxpostpms",
+    "body": [
+      "import bodyParser from 'body-parser';",
+      "import { request, response } from 'express';",
+      "",
+      "app.use(bodyParser.json());",
+      "app.post('/update', (req=request, res=response) => {",
+      "  const { name, description } = req.body;",
+      "  res.send(`Name \\${name\\}, desc \\${description\\}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "es6-express PUT params": {
+    "prefix": "njsxputpms",
+    "body": [
+      "import bodyParser from 'body-parser';",
+      "import { request, response } from 'express';",
+      "",
+      "app.use(bodyParser.json());",
+      "app.put('/products', (req=request, res=response) => {",
+      "  const { id, name, description } = req.body;",
+      "  res.send(`Name \\${id\\} \\${name\\}, desc \\${description\\}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "es6-express DELETE params": {
+    "prefix": "njsxdelpms",
+    "body": [
+      "import bodyParser from 'body-parser';",
+      "import { request, response } from 'express';",
+      "app.use(bodyParser.json());",
+      "",
+      "app.delete('/products/:id',(req=request, res=response) => {",
+      "  const { id } = req.params;",
+      "  res.send(`Delete record with id \\${id\\}`);",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "es6-express QUERY params": {
+    "prefix": "njsxquerypms",
+    "body": [
+      "import bodyParser from 'body-parser';",
+      "import { request, response } from 'express';",
+      "app.use(bodyParser.json());",
+      "",
+      "// for routes looking like this `/products?page=1&pageSize=50`",
+      "app.get('/products',(req=request, res=response) => {",
+      "  const page = req.query.page;",
+      "  const pageSize = req.query.pageSize;",
+      "  res.send(`Filter with parameters \\${page\\} and \\${pageSize\\});`",
+      "});"
+    ],
+    "description": "Creates a POST route that can read from the body"
+  },
+  "es6-http server": {
+    "prefix": "njshserver",
+    "body": [
+      "import http from 'http';",
+      "http.createServer((request, response) => {",
+      "  response.writeHead(200, {'Content-Type': 'text/plain'});",
+      "  response.end('Hello World');",
+      "}).listen(8081);",
+      "",
+      "console.log('Server running at http://127.0.0.1:8081/');"
+    ],
+    "description": "Creates a simple HTTP server"
+  },
+  "es6-file read sync": {
+    "prefix": "njsfrsync",
+    "body": ["import fs from 'fs';", "let data = fs.readFileSync('file.txt');"],
+    "description": "Reads a file synchronously"
+  },
+  "es6-file read async": {
+    "prefix": "njsfrasync",
+    "body": [
+      "import fs from 'fs';",
+      "fs.readFile('input.txt', (err, data) => {",
+      "  if (err) return console.error(err);",
+      "  console.log(data.toString());",
+      "});"
+    ],
+    "description": "Reads a file asynchronously"
+  },
+  "es6-event emitter": {
+    "prefix": "njseventr",
+    "body": [
+      "import events from 'events';",
+      "var eventEmitter = new events.EventEmitter();",
+      "eventEmitter.emit('my_event');",
+      "eventEmitter.on('my_event', () => {",
+      "  console.log('data received successfully.');",
+      "});"
+    ],
+    "description": "Event emitter, shows emitting event and subscribing to it"
+  },
+  "es6-Joi schema validation": {
+    "prefix": "njsxschema-validation",
+    "body": [
+      "import Joi from 'joi';",
+      "const loginSchema = Joi.object().keys({",
+      "  username: Joi.string().min(3).max(10).required(),",
+      "  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),",
+      "});",
+      "",
+      "app.post('/login', (req, res) => {",
+      "  const valid = Joi.validate(req.body, loginSchema).error === null;",
+      "  if (!valid) {",
+      "    res.status(422).json({",
+      "      status: 'error',",
+      "      message: 'Invalid request data',",
+      "      data: req.body,",
+      "    });",
+      "  } else {",
+      "    // happy days - login user",
+      "    res.send(`ok`);",
+      "  }",
+      "});"
+    ],
+    "description": "showcases the lib Joi and how you can use it to validate incoming requests"
+  },
+  "es6-supertest-init": {
+    "prefix": "njsupertest-init",
+    "body": [
+      "import supertest from 'supertest';",
+      "",
+      "import app from '../app.js';",
+      "",
+      "const port = 3000;",
+      "const server = app.listen(port, () => {",
+      "  console.log(`listening at port: ${port}`)",
+      "})",
+      "let request;"
+    ],
+    "description": "Sets up supertest by importing supertest and the app you mean to test. Additionally starts the app"
+  },
+  "path filename dirname": {
+    "prefix": "njsdirfilepath",
+    "body": [
+      "import path from 'path';",
+      "import { fileURLToPath } from 'url';",
+      "const __filename = fileURLToPath(import.meta.url);",
+      "const __dirname = path.dirname(__filename);",
+      "",
+      "// example usage",
+      "// PUG Template engine",
+      "// app.set('view engine', 'pug');",
+      "// app.set('views', path.join(__dirname, 'views'));",
+      "// public path",
+      "// app.use(express.static(__dirname + '/public'));"
+    ],
+    "description": "Create a path file name and dirname to implements on your app"
+  },
+  "es6-express router ": {
+    "prefix": "njsxrouter",
+    "body": [
+      "import { Router } from 'express';",
+      "import { request, response } from 'express';",
+      "",
+      "const router = Router();",
+      "",
+      "//example route",
+      "router.get('/login', (req = require, res = response) => {",
+      "try{",
+      "res.status(200).json({msg:'hello world'})",
+      "}",
+      "catch (error) {",
+      "res.status(400).json(error)",
+      "}",
+      "})",
+      "",
+      "export default router;"
+    ],
+    "description": "Create a simple router using express"
   }
 }
