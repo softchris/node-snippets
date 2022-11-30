@@ -86,7 +86,7 @@
   "jest-expect-to-throw": {
     "prefix": "node-jest-expect-to-throw",
     "body": [
-      "const thisThrows = () => throw new Error('error message')",
+      "const thisThrows = () => {throw new Error('error message')}",
       "expect(thisThrows).toThrow('error message')"
     ]
   },
@@ -217,7 +217,7 @@
       "app.get('/products', function(req, res) {",
       "  const page = req.query.page;",
       "  const pageSize = req.query.pageSize;",
-      "  res.send(`Filter with parameters \\${page\\} and \\${pageSize\\});`",
+      "  res.send(`Filter with parameters \\${page\\} and \\${pageSize\\}`);",
       "});"
     ],
     "description": "Creates a POST route that can read from the body"
@@ -369,10 +369,7 @@
     "body": [
       "const Joi = require('joi');",
       "const loginSchema = Joi.object().keys({",
-      "  username: Joi.string()",
-      "    .min(3)",
-      "    .max(10)",
-      "    .required(),",
+      "  username: Joi.string().min(3).max(10).required()",
       "  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/)",
       "});",
       "",
