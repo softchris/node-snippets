@@ -299,7 +299,7 @@
   "express POST params": {
     "prefix": "node-express-post-params",
     "body": [
-      "var bodyParser = require('body-parser');",
+      "const bodyParser = require('body-parser');",
       "app.use(bodyParser.json());",
       "",
       "app.post('/update', function(req, res) {",
@@ -312,7 +312,7 @@
   "express PUT params": {
     "prefix": "node-express-put-params",
     "body": [
-      "var bodyParser = require('body-parser');",
+      "const bodyParser = require('body-parser');",
       "app.use(bodyParser.json());",
       "",
       "app.put('/products', function(req, res) {",
@@ -325,7 +325,7 @@
   "express DELETE params": {
     "prefix": "node-express-delete-params",
     "body": [
-      "var bodyParser = require('body-parser');",
+      "const bodyParser = require('body-parser');",
       "app.use(bodyParser.json());",
       "",
       "app.delete('/products/:id', function(req, res) {",
@@ -338,7 +338,7 @@
   "express QUERY params": {
     "prefix": "node-express-query-params",
     "body": [
-      "var bodyParser = require('body-parser');",
+      "const bodyParser = require('body-parser');",
       "app.use(bodyParser.json());",
       "",
       "// for routes looking like this `/products?page=1&pageSize=50`",
@@ -391,7 +391,7 @@
   "http server": {
     "prefix": "node-http-server",
     "body": [
-      "var http = require('http');",
+      "const http = require('http');",
       "http.createServer(function (request, response) {",
       "  response.writeHead(200, {'Content-Type': 'text/plain'});",
       "  response.end('Hello World');",
@@ -404,15 +404,15 @@
   "file read sync": {
     "prefix": "node-file-read-sync",
     "body": [
-      "var fs = require('fs');",
-      "var data = fs.readFileSync('file.txt');"
+      "const fs = require('fs');",
+      "const data = fs.readFileSync('file.txt');"
     ],
     "description": "Reads a file synchronously"
   },
   "file read async": {
     "prefix": "node-file-read-async",
     "body": [
-      "var fs = require('fs');",
+      "const fs = require('fs');",
       "fs.readFile('input.txt', function (err, data) {",
       "  if (err) return console.error(err);",
       "  console.log(data.toString());",
@@ -423,8 +423,8 @@
   "event emitter": {
     "prefix": "node-event-emitter",
     "body": [
-      "var events = require('events');",
-      "var eventEmitter = new events.EventEmitter();",
+      "const events = require('events');",
+      "const eventEmitter = new events.EventEmitter();",
       "eventEmitter.emit('my_event');",
       "eventEmitter.on('my_event', () => {",
       "  console.log('data received successfully.');",
