@@ -4,11 +4,41 @@
 This is an extension meant to give you some awesome NodeJS snippets
 ![alt text](images/node-snippets.gif "Using the snippet")
 
-## Contact
+## NEW - generative AI commands
+
+The following commands have been added in 1.4.0:
+
+- `node-genai-response-api-app`, generates a response API app,
+- `node-genai-response-api-client`, generates a response API, only the client part.
+- `node-genai-response-api-response`, generates a response API, only the response part.
+- `node-genai-chat-messages`, is a list of chat messages sent to the LLM.
+- `node-genai-chat-app`, generates a chat app.
+- `node-genai-github-models`, generates a chat app that you can run in GitHub Codespaces or 
+
+Try out a fun free course on Generative AI + JavaScript, it features:
+
+<div>
+   <img src="./background.png" alt="Generative AI For JavaScript" width="400px">
+</div>
+
+- Lessons on fundamentals of Generative AI including RAG
+- It has a companion app that lets you interact with historical characters like Ada Lovelace and Leonardo Da Vinci.
+- It has a fun time travelling narrative.
+
+<div>
+   <img src="./character.png" alt="Companion app" width="400px">
+</div>
+
+> Check it out at [Generative AI For JavaScript](https://github.com/microsoft/generative-ai-with-javascript)
+
+## Contact
 
 If you find issues please report them on the GitHub repo.
 
-If you have any comments like feature requests or feedback on theses snippets please contact me on Twitter at [chris_noring](https://twitter.com/chris_noring).
+If you have any comments like feature requests or feedback on theses snippets please contact me on:
+
+- **Twitter** at [chris_noring](https://twitter.com/chris_noring).
+- **Linked In** at [Chris Noring](https://uk.linkedin.com/in/christoffer-noring-3257061)
 
 Remember these snippets are for all of you, so if you feel that they could be even better, don't hesitate to let me know :)
 
@@ -83,9 +113,20 @@ The following commands are available:
 - `node-supertest-testgetwithparam`, an example of supertest testing a GET route with a route parameter
 - `node-supertest-testpost`, an example of supertest testing a POST route with a payload
 
+- `node-genai-response-api-app`, generates a response API app,
+- `node-genai-response-api-client`, generates a response API, only the client part.
+- `node-genai-response-api-response`, generates a response API, only the response part.
+- `node-genai-chat-messages`, is a list of chat messages sent to the LLM.
+- `node-genai-chat-app`, generates a chat app.
+- `node-genai-github-models`, generates a chat app that you can run in GitHub Codespaces or locally if you create a personal access token.
+
 ## Release Notes
 
 This is the release notes.
+
+### 1.4.0
+
+Adding generative Gen AI snippets.
 
 ### 1.3.3
 
